@@ -1,0 +1,14 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/mihoyo_client"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("MIHOYO_DATABASE_URL")
+}
+
+model archive_character {
+  character_custom_id String @id @default("") @db.VarChar(255)
+  character_name      String @db.VarChar(255)
+}

@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/sys_user_client"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("SYS_DATABASE_URL")
+}
+
+model system_user {
+  user_id       String @id @db.VarChar(255)
+  user_name     String @db.VarChar(255)
+  user_number   String @db.VarChar(255)
+  user_password String @db.VarChar(255)
+}
